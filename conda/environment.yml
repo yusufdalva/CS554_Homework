@@ -1,0 +1,14 @@
+name: cs554-hw
+channels:
+  - conda-forge
+  - anaconda
+  - defaults
+dependencies:
+  - python==3.8
+  - pip
+  - pip:
+      - zipfile38
+      - matplotlib
+      - numpy
+      - opencv-python
+      - pillow
