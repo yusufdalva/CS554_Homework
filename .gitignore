@@ -126,8 +126,12 @@ venv.bak/
 dmypy.json
 
 # Pyre type checker
+<<<<<<< HEAD
 .pyre/
 
 # Homework dataset
 homework_dataset
 experiments
+=======
+.pyre/
+>>>>>>> e3b469d40745dab78fbdaf3471045c9558a264c8
