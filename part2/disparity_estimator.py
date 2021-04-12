@@ -12,7 +12,7 @@ class DisparityMapEstimator:
         self.max_disparity = max_disparity
         if color_mode not in ("rgb", "gray"):
             raise AttributeError("Invalid color mode: It should be 'gray' for grayscale and 'rgb' for RGB colors")
-        self.color_mode = "gray"
+        self.color_mode = color_mode
         if depth_mode not in ("window", "pixel"):
             raise AttributeError("Depth value (depth_mode) can only be determined window-based('window') or center-based('center')")
         self.depth_mode = depth_mode
@@ -34,7 +34,8 @@ class DisparityMapEstimator:
             self.right_image = cv2.imread(right_path)
         elif self.color_mode == "gray":
             self.right_image = cv2.imread(right_path, 0)
-        
+        self.left_image = np.flipud(np.fliplr(self.left_image))
+        self.right_image = np.flipud(np.fliplr(self.right_image))
         if self.right_image.shape != self.left_image.shape:
             raise ValueError("Selected right and left images are not equal in size")
 
